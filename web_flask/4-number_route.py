@@ -43,7 +43,7 @@ def python_is_cool(text="is cool"):
     return 'Python ' + text.replace('_', ' ')
 
 
-@app.route('/umber/<int:n>', sttrict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
     """
     Dynamic routing
