@@ -29,7 +29,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_is_fun(text):
     """
-    Dynamix routing
+    Dynamic routing
     """
     return 'C ' + text.replace('_', ' ')
 
