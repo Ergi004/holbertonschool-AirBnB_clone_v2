@@ -40,7 +40,7 @@ def python_is_cool(text="is cool"):
     """
     Dynamic routing
     """
-    return 'Py ' + text.replace('_', ' ')
+    return 'Python ' + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
