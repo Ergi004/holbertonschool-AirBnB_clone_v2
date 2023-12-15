@@ -68,12 +68,7 @@ class DBStorage:
         """delete an element in the table
         """
         if obj:
-            self.session.delete(obj)
-
-    def close(self):
-        """ calls remove()
-        """
-        self.__session.close()
+            self.session.delete(obj) 
 
     def reload(self):
         """
@@ -83,4 +78,9 @@ class DBStorage:
         sec = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sec)
         self.__session = Session()
+
+        def close(self):
+        """ calls remove()
+        """
+        self.__session.close()
 
