@@ -70,15 +70,17 @@ class DBStorage:
         if obj:
             self.session.delete(obj)
 
+    def close(self):
+        """ calls remove()
+        """
+        self.__session.close()
+
     def reload(self):
-        """configuration
+        """
+        configuration
         """
         Base.metadata.create_all(self.__engine)
         sec = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sec)
         self.__session = Session()
 
-    def close(self):
-        """ calls remove()
-        """
-        self.__session.close()
