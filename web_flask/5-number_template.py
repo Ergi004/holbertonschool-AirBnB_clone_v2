@@ -5,6 +5,7 @@ Module to initiate a flask app
 
 
 from flask import Flask
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -36,7 +37,7 @@ def c_is_fun(text):
 
 @app.route('/python/')
 @app.route('/python/<text>', strict_slashes=False)
-def python_is_cool(text="is cool"):
+def python_is_cool(text='is cool'):
     """
     Dynamic routing
     """
@@ -52,11 +53,13 @@ def is_number(n):
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """
     Dynamic routing and template rendering
     """
     return render_template('5-number.html', n=n)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
